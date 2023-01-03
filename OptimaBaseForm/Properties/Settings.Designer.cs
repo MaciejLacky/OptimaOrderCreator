@@ -286,5 +286,233 @@ namespace OptimaBaseForm.Properties {
                 this["CompanyGID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlConnectionString {
+            get {
+                return ((string)(this["SqlConnectionString"]));
+            }
+            set {
+                this["SqlConnectionString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlConnectionStringFirma2 {
+            get {
+                return ((string)(this["SqlConnectionStringFirma2"]));
+            }
+            set {
+                this["SqlConnectionStringFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Opt2KonfigConnectStr {
+            get {
+                return ((string)(this["Opt2KonfigConnectStr"]));
+            }
+            set {
+                this["Opt2KonfigConnectStr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Opt2Operator {
+            get {
+                return ((string)(this["Opt2Operator"]));
+            }
+            set {
+                this["Opt2Operator"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Opt2Haslo {
+            get {
+                return ((string)(this["Opt2Haslo"]));
+            }
+            set {
+                this["Opt2Haslo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Opt2Firma {
+            get {
+                return ((string)(this["Opt2Firma"]));
+            }
+            set {
+                this["Opt2Firma"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptPassword {
+            get {
+                return ((string)(this["OptPassword"]));
+            }
+            set {
+                this["OptPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OptKBPFirma2 {
+            get {
+                return ((bool)(this["OptKBPFirma2"]));
+            }
+            set {
+                this["OptKBPFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OptHAPFirma2 {
+            get {
+                return ((bool)(this["OptHAPFirma2"]));
+            }
+            set {
+                this["OptHAPFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptPathFirma2 {
+            get {
+                return ((string)(this["OptPathFirma2"]));
+            }
+            set {
+                this["OptPathFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlOptBazaKonfigConnectionStrFirma2 {
+            get {
+                return ((string)(this["SqlOptBazaKonfigConnectionStrFirma2"]));
+            }
+            set {
+                this["SqlOptBazaKonfigConnectionStrFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OptModulyUseraFirma2 {
+            get {
+                return ((bool)(this["OptModulyUseraFirma2"]));
+            }
+            set {
+                this["OptModulyUseraFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptUserFirma2 {
+            get {
+                return ((string)(this["OptUserFirma2"]));
+            }
+            set {
+                this["OptUserFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptPasswordFirma2 {
+            get {
+                return ((string)(this["OptPasswordFirma2"]));
+            }
+            set {
+                this["OptPasswordFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptCompanyFirma2 {
+            get {
+                return ((string)(this["OptCompanyFirma2"]));
+            }
+            set {
+                this["OptCompanyFirma2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlDatabaseName {
+            get {
+                return ((string)(this["SqlDatabaseName"]));
+            }
+            set {
+                this["SqlDatabaseName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlServerName {
+            get {
+                return ((string)(this["SqlServerName"]));
+            }
+            set {
+                this["SqlServerName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlLogin {
+            get {
+                return ((string)(this["SqlLogin"]));
+            }
+            set {
+                this["SqlLogin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SqlPassword {
+            get {
+                return ((string)(this["SqlPassword"]));
+            }
+            set {
+                this["SqlPassword"] = value;
+            }
+        }
     }
 }

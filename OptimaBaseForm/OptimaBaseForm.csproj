@@ -27,4 +27,86 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ADODB">
+      <HintPath>..\DLL\adodb.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\DLL\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DataAccess">
+      <HintPath>..\DLL\Common.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logic">
+      <HintPath>..\DLL\Common.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.View.WinForms">
+      <HintPath>..\DLL\Common.View.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="DVCCommunicationServer">
+      <HintPath>..\DLL\DVCCommunicationServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ERP">
+      <HintPath>..\DLL\ERP.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNBase">
+      <HintPath>..\DLL\ICDNBase.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNConst">
+      <HintPath>..\DLL\ICDNConst.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNHeal">
+      <HintPath>..\DLL\ICDNHeal.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNHlmn">
+      <HintPath>..\DLL\ICDNHlmn.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNKH">
+      <HintPath>..\DLL\ICDNKH.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNKONFIGLib">
+      <HintPath>..\DLL\ICDNKONFIGLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNLib">
+      <HintPath>..\DLL\ICDNLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNMail">
+      <HintPath>..\DLL\ICDNMail.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNRVAT">
+      <HintPath>..\DLL\ICDNRVAT.dll</HintPath>
+    </Reference>
+    <Reference Include="ICDNTwrb1">
+      <HintPath>..\DLL\ICDNTwrb1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.craxdrt">
+      <HintPath>..\DLL\Interop.CRAXDRT.dll</HintPath>
+    </Reference>
+    <Reference Include="IOP_CSRSLib">
+      <HintPath>..\DLL\IOP_CSRSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IOP_DBIMPLib">
+      <HintPath>..\DLL\IOP_DBIMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IOP_KASBOLib">
+      <HintPath>..\DLL\IOP_KASBOLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IZIPMODLib">
+      <HintPath>..\DLL\IZIPMODLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="OnlineFPCommon">
+      <HintPath>..\DLL\OnlineFpCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="RDPFileLib">
+      <HintPath>..\DLL\RDPFileLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
