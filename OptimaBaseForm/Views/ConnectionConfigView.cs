@@ -64,12 +64,12 @@ namespace OptimaBaseForm.Views
             if (fbdOptPath.ShowDialog() == DialogResult.Cancel) return;
             var katalogOpt = fbdOptPath.SelectedPath;
 
-            //if (File.Exists(katalogOpt + "\\optima.exe") || File.Exists(katalogOpt + "\\Comarch OPT!MA.exe"))
-            //{
-                  tbOptPath.Text = katalogOpt;               
-            //    return;
-            //}
-           // MessageBox.Show("Katalog nie zawiera pliku optima.exe", "informacja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (File.Exists(katalogOpt + "\\optima.exe") || File.Exists(katalogOpt + "\\Comarch OPT!MA.exe"))
+            {
+                tbOptPath.Text = katalogOpt;
+                return;
+            }
+            MessageBox.Show("Katalog nie zawiera pliku optima.exe", "informacja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void cbOptModulyUsera_CheckedChanged(object sender, EventArgs e)

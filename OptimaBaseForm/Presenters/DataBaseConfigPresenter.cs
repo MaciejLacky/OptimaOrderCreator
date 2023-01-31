@@ -2,6 +2,7 @@
 using OptimaBaseForm.Views.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -22,8 +23,13 @@ namespace OptimaBaseForm.Presenters
             this.view.SaveEvent += SaveConfig;
             this.view.CancelEvent += CancelView;
             this.view.LoadEvent += LoadConfig;
+            this.view.SqlPrepareTables += SqlPrepareTables;
+            this.view.SqlPrepareMethods += SqlPrepareMethods;
             this.view.Show();
         }
+
+        private void SqlPrepareTables(object? sender, EventArgs e) => SqlPrepareTables();
+        private void SqlPrepareMethods(object? sender, EventArgs e) => SqlPrepareMethods();
 
         private void LoadConfig(object? sender, EventArgs e) => LoadConfig();
         private void SaveConfig(object? sender, EventArgs e) => SaveConfig();
@@ -71,5 +77,85 @@ namespace OptimaBaseForm.Presenters
 
             Settings.Default.Save();
         }
+
+        private void SqlPrepareTables()
+        {
+
+            try
+            {
+                string[] procedures = SqlSplitProcedures(0).Split(new string[] { "GO" }, StringSplitOptions.None);
+
+                using (SqlConnection conn = new SqlConnection(Methods.GetSqlConnectionString()))
+                {
+                    conn.Open();
+                    foreach (string procedure in procedures)
+                    {
+                        if (string.IsNullOrWhiteSpace(procedure)) continue;
+
+                        try { new SqlCommand(procedure, conn).ExecuteNonQuery(); }
+                        catch (Exception ex)
+                        {
+                            if (procedure.Contains("IF EXISTS(SELECT * FROM [ELTES].[Mapping]) AND (SELECT COUNT([Map_OptId]) FROM [ELTES].[BlMapping])=0")) continue;
+                            Log.Error("Tworzeniem tabel/pól sql " + ex.Message);
+                        }
+                    }
+                }
+                MessageBox.Show("Tabele zostały dostosowane.", "Sukces!", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Problem ogólny z tworzeniem tabel/pól sql ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Problem ogólny z tworzeniem tabel/pól sql " + ex.Message);
+            }
+        }
+
+        public void SqlPrepareMethods()
+        {
+            try
+            {
+                string[] procedures = SqlSplitProcedures(1).Split(new string[] { "GO" }, StringSplitOptions.None);
+                using (SqlConnection conn = new SqlConnection(Methods.GetSqlConnectionString()))
+                {
+                    conn.Open();
+                    foreach (string procedure in procedures)
+                    {
+                        if (string.IsNullOrWhiteSpace(procedure)) continue;
+
+                        try { new SqlCommand(procedure, conn).ExecuteNonQuery(); }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString(), "Problem z tworzeniem procedur sql ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Log.Error("Problem z tworzeniem procedur sql " + ex.Message);
+                        }
+                    }
+
+                }
+                MessageBox.Show("Metody zostały dostosowane.", "Sukces!", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Problem ogólny  z tworzeniem procedur sql ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Problem ogólny z tworzeniem procedur sql " + ex.Message);
+            }
+        }
+
+        private string SqlSplitProcedures(int num)
+        {
+            string procedures;
+            string fileName = "\\Procedures.sql";
+
+            try { procedures = File.ReadAllText(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + fileName); }
+            catch (Exception)
+            {
+                Environment.CurrentDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                procedures = File.ReadAllText(Environment.CurrentDirectory.Replace(@"bin\Debug", "") + fileName);
+            }
+
+
+
+            string[] splittedProcedures = procedures.Split(new string[] { "--StringSplitter" }, StringSplitOptions.None);
+            return splittedProcedures[num];
+        }
+
     }
 }

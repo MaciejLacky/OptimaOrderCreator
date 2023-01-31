@@ -10,7 +10,7 @@ namespace OptimaBaseForm.Views.Interfaces
     {
         event EventHandler ShowConnectionConfig;
         event EventHandler ShowDataBaseConfig;
-        event EventHandler ShowMainImportOrders;
+        event EventHandler ShowSetSaleFromFile;
         void CustomizeDesign();
         void HideSubMenu();
         void ShowSubMenu(Panel submenu);

@@ -18,14 +18,14 @@ namespace OptimaBaseForm.Presenters
             this.mainView = mainView;            
             this.mainView.ShowConnectionConfig += ShowConnectionConfig;
             this.mainView.ShowDataBaseConfig += ShowDataBaseConfig;
-            this.mainView.ShowMainImportOrders += ShowMainImportOrders;
+            this.mainView.ShowSetSaleFromFile += ShowSetSaleFromFile;
     }
 
-        private void ShowMainImportOrders(object? sender, EventArgs e)
+        private void ShowSetSaleFromFile(object? sender, EventArgs e)
         {
-            var view = StatusesToGetOrdersView.GetInstance((MainView)mainView);
+            var view = SetSalesFromFileView.GetInstance((MainView)mainView);
 
-            new StatusesToGetOrdersPresenter(view, mainView);
+            new SetSalesFromFilePresenter(view, mainView);
         }
 
         private void ShowDataBaseConfig(object? sender, EventArgs e)

@@ -125,5 +125,26 @@
     <Setting Name="SqlPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SpecialOfferPriceTypeIdSFF" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UpdAtrSaleIdSFF" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UpdAtrSaleValueSFF" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SpecialOfferNameSFF" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FilePathSFF" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SpecialOfferFrom" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">01/26/2023 18:22:00</Value>
+    </Setting>
+    <Setting Name="SpecialOfferTo" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">01/26/2023 18:22:00</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

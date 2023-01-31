@@ -41,7 +41,7 @@ namespace OptimaBaseForm.Presenters
         private void LoadConfig()
         {
             LoadComboboxes();
-            LoadDataGridViews();
+            LoadDataGridViews();          
         }
 
         private void SaveConfig()

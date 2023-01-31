@@ -6,9 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -33,80 +39,176 @@
 
   <ItemGroup>
     <Reference Include="ADODB">
-      <HintPath>..\DLL\adodb.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\adodb.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Common">
-      <HintPath>..\DLL\Common.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\Common.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Common.DataAccess">
-      <HintPath>..\DLL\Common.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\Common.DataAccess.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Common.Logic">
-      <HintPath>..\DLL\Common.Logic.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\Common.Logic.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Common.View.WinForms">
-      <HintPath>..\DLL\Common.View.WinForms.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\Common.View.WinForms.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DVCCommunicationServer">
-      <HintPath>..\DLL\DVCCommunicationServer.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\DVCCommunicationServer.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ERP">
-      <HintPath>..\DLL\ERP.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ERP.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNBase">
-      <HintPath>..\DLL\ICDNBase.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNBase.dll</HintPath>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
+      <Aliases>global</Aliases>
     </Reference>
     <Reference Include="ICDNConst">
-      <HintPath>..\DLL\ICDNConst.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNConst.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNHeal">
-      <HintPath>..\DLL\ICDNHeal.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNHeal.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNHlmn">
-      <HintPath>..\DLL\ICDNHlmn.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNHlmn.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNKH">
-      <HintPath>..\DLL\ICDNKH.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNKH.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNKONFIGLib">
-      <HintPath>..\DLL\ICDNKONFIGLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNKONFIGLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNLib">
-      <HintPath>..\DLL\ICDNLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNMail">
-      <HintPath>..\DLL\ICDNMail.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNMail.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICDNRVAT">
-      <HintPath>..\DLL\ICDNRVAT.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNRVAT.dll</HintPath>
+      <Aliases></Aliases>
     </Reference>
     <Reference Include="ICDNTwrb1">
-      <HintPath>..\DLL\ICDNTwrb1.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\ICDNTwrb1.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Interop.craxdrt">
-      <HintPath>..\DLL\Interop.CRAXDRT.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\Interop.CRAXDRT.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="IOP_CSRSLib">
-      <HintPath>..\DLL\IOP_CSRSLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\IOP_CSRSLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="IOP_DBIMPLib">
-      <HintPath>..\DLL\IOP_DBIMPLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\IOP_DBIMPLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="IOP_KASBOLib">
-      <HintPath>..\DLL\IOP_KASBOLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\IOP_KASBOLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="IZIPMODLib">
-      <HintPath>..\DLL\IZIPMODLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\IZIPMODLib.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\DLL\log4net.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\log4net.dll</HintPath>
+      <Aliases>global</Aliases>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="OnlineFPCommon">
-      <HintPath>..\DLL\OnlineFpCommon.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\OnlineFpCommon.dll</HintPath>
     </Reference>
     <Reference Include="RDPFileLib">
-      <HintPath>..\DLL\RDPFileLib.dll</HintPath>
+      <HintPath>..\..\..\PrestShop\biblioteki\DLL\RDPFileLib.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

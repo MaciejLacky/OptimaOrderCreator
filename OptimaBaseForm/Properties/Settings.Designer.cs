@@ -12,7 +12,7 @@ namespace OptimaBaseForm.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -512,6 +512,90 @@ namespace OptimaBaseForm.Properties {
             }
             set {
                 this["SqlPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SpecialOfferPriceTypeIdSFF {
+            get {
+                return ((int)(this["SpecialOfferPriceTypeIdSFF"]));
+            }
+            set {
+                this["SpecialOfferPriceTypeIdSFF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UpdAtrSaleIdSFF {
+            get {
+                return ((int)(this["UpdAtrSaleIdSFF"]));
+            }
+            set {
+                this["UpdAtrSaleIdSFF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UpdAtrSaleValueSFF {
+            get {
+                return ((string)(this["UpdAtrSaleValueSFF"]));
+            }
+            set {
+                this["UpdAtrSaleValueSFF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SpecialOfferNameSFF {
+            get {
+                return ((string)(this["SpecialOfferNameSFF"]));
+            }
+            set {
+                this["SpecialOfferNameSFF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FilePathSFF {
+            get {
+                return ((string)(this["FilePathSFF"]));
+            }
+            set {
+                this["FilePathSFF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("01/26/2023 18:22:00")]
+        public global::System.DateTime SpecialOfferFrom {
+            get {
+                return ((global::System.DateTime)(this["SpecialOfferFrom"]));
+            }
+            set {
+                this["SpecialOfferFrom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("01/26/2023 18:22:00")]
+        public global::System.DateTime SpecialOfferTo {
+            get {
+                return ((global::System.DateTime)(this["SpecialOfferTo"]));
+            }
+            set {
+                this["SpecialOfferTo"] = value;
             }
         }
     }

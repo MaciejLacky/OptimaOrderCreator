@@ -1,4 +1,5 @@
-﻿using OptimaBaseForm.Properties;
+﻿using OptimaBaseForm.Optima;
+using OptimaBaseForm.Properties;
 using OptimaBaseForm.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,14 @@ namespace OptimaBaseForm.Presenters
             this.mainView = mainView;
             this.view.SaveEvent += SaveConfig;
             this.view.CancelEvent += CancelView;
-            this.view.LoadEvent += LoadConfig;         
+            this.view.LoadEvent += LoadConfig;
+            this.view.OptConnectionTest += ConnectionTest;
             this.view.Show();    
            
         }
+
+        private void ConnectionTest(object? sender, EventArgs e) => ConnectionTest();
+
         private void LoadConfig(object? sender, EventArgs e) => LoadConfig();
         private void SaveConfig(object? sender, EventArgs e) => SaveConfig();
         private void CancelView(object? sender, EventArgs e)
@@ -31,7 +36,15 @@ namespace OptimaBaseForm.Presenters
             this.mainView.ShowMainPanel();
         }
 
-
+        private void ConnectionTest()
+        {
+            string log = "";
+            SaveConfig();
+            //if (Settings.Default.XL) Xl.XlLoginTest(ref log);
+            //else Opt.LogInTest(ref log);
+            Opt.LogInTest(ref log);
+            MessageBox.Show(log);
+        }
         private void LoadConfig()
         {
             view.OptPath = Settings.Default.OptPath;

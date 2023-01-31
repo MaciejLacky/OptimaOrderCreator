@@ -15,7 +15,7 @@ namespace OptimaBaseForm.Views
     {
         public event EventHandler ShowConnectionConfig;
         public event EventHandler ShowDataBaseConfig;
-        public event EventHandler ShowMainImportOrders;
+        public event EventHandler ShowSetSaleFromFile;
         public MainView()
         {
             InitializeComponent();
@@ -43,9 +43,9 @@ namespace OptimaBaseForm.Views
                 ShowSubMenu(panelSubmenu2);
                 ShowMainPanel();
             };
-            btnMainImportOrders.Click += delegate
+            btnSetSaleFromFile.Click += delegate
             {
-                ShowMainImportOrders?.Invoke(this, EventArgs.Empty);
+                ShowSetSaleFromFile?.Invoke(this, EventArgs.Empty);
                 HideMainPanel();
             };
         }
