@@ -88,7 +88,7 @@ GO
   WHERE Twr_EAN = @prod_Code OR Twr_Kod = @prod_Code
   GO
 
- CREATE PROCEDURE [ELTES].[AddSpecialPriceProduct] @prodCode varchar(20), @priceNr int, @prodId int, @oldPrice decimal,@salePrice decimal, @name varchar(100), @dateFrom datetime, @dateTo datetime
+ CREATE PROCEDURE [ELTES].[AddSpecialPriceProduct] @prodCode varchar(20), @priceNr int, @prodId int, @oldPrice decimal(10,2),@salePrice decimal(10,2), @name varchar(100), @dateFrom datetime, @dateTo datetime
 AS
 INSERT INTO [ELTES].[OptDetalSpecialPrice] (Sp_Name, Sp_TwrOptId,Sp_TwrCode,Sp_TwcPriceNumber,Sp_OldPrice,Sp_SpecialPrice,Sp_DateFrom,Sp_DateTo) 
 VALUES (@name, @prodId, @prodCode, @priceNr, @oldPrice, @salePrice, @dateFrom, @dateTo )

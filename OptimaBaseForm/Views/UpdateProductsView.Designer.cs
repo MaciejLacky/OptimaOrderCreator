@@ -37,6 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbLogOrder = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbLastKntByOrder = new System.Windows.Forms.CheckBox();
             this.tbOrderRotationAtrProductValue = new System.Windows.Forms.TextBox();
             this.nudOrderRotationAddIfZero = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.btnDeleteUpdProduct = new System.Windows.Forms.Button();
             this.btnAddUpdProduct = new System.Windows.Forms.Button();
             this.dgvUpdateProduct = new System.Windows.Forms.DataGridView();
-            this.cbLastKntByOrder = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -226,6 +226,16 @@
             this.panel3.Size = new System.Drawing.Size(936, 105);
             this.panel3.TabIndex = 1;
             // 
+            // cbLastKntByOrder
+            // 
+            this.cbLastKntByOrder.AutoSize = true;
+            this.cbLastKntByOrder.Location = new System.Drawing.Point(651, 10);
+            this.cbLastKntByOrder.Name = "cbLastKntByOrder";
+            this.cbLastKntByOrder.Size = new System.Drawing.Size(283, 19);
+            this.cbLastKntByOrder.TabIndex = 28;
+            this.cbLastKntByOrder.Text = "Kontrahent na podstawie ostatniego zamówienia";
+            this.cbLastKntByOrder.UseVisualStyleBackColor = true;
+            // 
             // tbOrderRotationAtrProductValue
             // 
             this.tbOrderRotationAtrProductValue.Location = new System.Drawing.Point(282, 71);
@@ -274,19 +284,9 @@
             0,
             0,
             0});
-            this.nudOrderRotationMinValue.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.nudOrderRotationMinValue.Name = "nudOrderRotationMinValue";
             this.nudOrderRotationMinValue.Size = new System.Drawing.Size(86, 23);
             this.nudOrderRotationMinValue.TabIndex = 23;
-            this.nudOrderRotationMinValue.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             // 
             // label14
             // 
@@ -648,16 +648,6 @@
             this.dgvUpdateProduct.RowTemplate.Height = 29;
             this.dgvUpdateProduct.Size = new System.Drawing.Size(638, 329);
             this.dgvUpdateProduct.TabIndex = 0;
-            // 
-            // cbLastKntByOrder
-            // 
-            this.cbLastKntByOrder.AutoSize = true;
-            this.cbLastKntByOrder.Location = new System.Drawing.Point(651, 10);
-            this.cbLastKntByOrder.Name = "cbLastKntByOrder";
-            this.cbLastKntByOrder.Size = new System.Drawing.Size(283, 19);
-            this.cbLastKntByOrder.TabIndex = 28;
-            this.cbLastKntByOrder.Text = "Kontrahent na podstawie ostatniego zamówienia";
-            this.cbLastKntByOrder.UseVisualStyleBackColor = true;
             // 
             // UpdateProductsView
             // 
