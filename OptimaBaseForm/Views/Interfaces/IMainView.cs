@@ -11,6 +11,9 @@ namespace OptimaBaseForm.Views.Interfaces
         event EventHandler ShowConnectionConfig;
         event EventHandler ShowDataBaseConfig;
         event EventHandler ShowSetSaleFromFile;
+        event EventHandler ShowIntegrationBaselinker;
+        event EventHandler ShowIntegrationPrestaShop;
+        event EventHandler ShowUpdateProducts;
         void CustomizeDesign();
         void HideSubMenu();
         void ShowSubMenu(Panel submenu);

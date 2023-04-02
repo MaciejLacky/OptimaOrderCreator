@@ -83,7 +83,7 @@ namespace OptimaBaseForm.Presenters
         {
             // Get values from model
             Dictionary<int, string> valuesPrice = Config.GetPricesFromOPT();
-            Dictionary<int, string> valuesAtr = Config.GetAtrValueToUpdPricesFromOPT();
+            Dictionary<int, string> valuesAtr = Config.GetAtrProdValue();
 
             if (valuesPrice != null && valuesPrice.Count>0)
             view.LoadCombobox(valuesPrice, "typePrice");

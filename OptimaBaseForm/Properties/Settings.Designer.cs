@@ -598,5 +598,137 @@ namespace OptimaBaseForm.Properties {
                 this["SpecialOfferTo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OrderRotationDaysBack {
+            get {
+                return ((decimal)(this["OrderRotationDaysBack"]));
+            }
+            set {
+                this["OrderRotationDaysBack"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OrderRotationMag {
+            get {
+                return ((int)(this["OrderRotationMag"]));
+            }
+            set {
+                this["OrderRotationMag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OrderRotaionProductName {
+            get {
+                return ((string)(this["OrderRotaionProductName"]));
+            }
+            set {
+                this["OrderRotaionProductName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OrderRotationAtrProductValue {
+            get {
+                return ((string)(this["OrderRotationAtrProductValue"]));
+            }
+            set {
+                this["OrderRotationAtrProductValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OrderRotationAtrProductId {
+            get {
+                return ((int)(this["OrderRotationAtrProductId"]));
+            }
+            set {
+                this["OrderRotationAtrProductId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OrderRotationKnt {
+            get {
+                return ((string)(this["OrderRotationKnt"]));
+            }
+            set {
+                this["OrderRotationKnt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OrderRotationAddIfZero {
+            get {
+                return ((decimal)(this["OrderRotationAddIfZero"]));
+            }
+            set {
+                this["OrderRotationAddIfZero"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OrderRotationMinValue {
+            get {
+                return ((decimal)(this["OrderRotationMinValue"]));
+            }
+            set {
+                this["OrderRotationMinValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OrderRotationMaxValue {
+            get {
+                return ((decimal)(this["OrderRotationMaxValue"]));
+            }
+            set {
+                this["OrderRotationMaxValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OrderRotationKntId {
+            get {
+                return ((int)(this["OrderRotationKntId"]));
+            }
+            set {
+                this["OrderRotationKntId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LastKntByOrder {
+            get {
+                return ((bool)(this["LastKntByOrder"]));
+            }
+            set {
+                this["LastKntByOrder"] = value;
+            }
+        }
     }
 }

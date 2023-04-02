@@ -47,7 +47,20 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID(
 DROP PROCEDURE [ELTES].[GetSpecialPricesByName] 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[DeleteSpFromTable]'))
 DROP PROCEDURE [ELTES].[DeleteSpFromTable] 
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetGroupsFromOPTPlus]'))
+DROP PROCEDURE [ELTES].[GetGroupsFromOPTPlus] 
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetOptPlusProductAttributes]'))
+DROP PROCEDURE [ELTES].[GetOptPlusProductAttributes]
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetOptPlusMag]'))
+DROP PROCEDURE [ELTES].[GetOptPlusMag]
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetKntSupplierOptPlus]'))
+DROP PROCEDURE [ELTES].[GetKntSupplierOptPlus]
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetLastKntSupplierOptPlus]'))
+DROP PROCEDURE [ELTES].[GetLastKntSupplierOptPlus]
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('[ELTES].[GetProductSaleByProductNameOptPlus]'))
+DROP PROCEDURE [ELTES].[GetProductSaleByProductNameOptPlus]
 GO
+
 
 CREATE PROCEDURE [ELTES].[OptDetalGetMapping] @type int
 AS
@@ -99,9 +112,66 @@ GO
   WHERE Sp_Name = @name AND Sp_TwcPriceNumber = @priceNr AND Sp_TwrOptId = @prodId
   GO
 
-  CREATE PROCEDURE [ELTES].[GetOptProductAttributes]
+  CREATE PROCEDURE [ELTES].[GetOptPlusProductAttributes]
 AS
 SELECT DeA_DeAId, DeA_Kod
 FROM  CDN.DefAtrybuty
 WHERE DeA_Typ = 1
+GO
+
+CREATE PROCEDURE [ELTES].[GetGroupsFromOPTPlus]
+AS  
+SELECT TwG_TwGID, TwG_GIDNumer, TwG_Kod, TwG_Nazwa, TwG_GIDNumer FROM CDN.TwrGrupy
+WHERE TwG_GIDTyp = -16
+GO
+
+CREATE PROCEDURE [ELTES].[GetOptPlusMag]
+AS  
+SELECT Mag_MagId, Mag_Nazwa FROM CDN.Magazyny
+GO
+
+CREATE PROCEDURE [ELTES].[GetKntSupplierOptPlus]
+AS  
+SELECT Knt_KntId, 
+ISNULL( Knt_Kod,'') AS Knt_Kod,
+ISNULL(Knt_Nazwa1,'') AS Knt_Nazwa1 
+FROM CDN.Kontrahenci
+WHERE Knt_Rodzaj_Dostawca = 1
+GO
+
+CREATE PROCEDURE [ELTES].[GetProductSaleByProductNameOptPlus] @productName varchar(max), @daysBack integer, @twrAtrId integer, @twrAtrTxt varchar(max), @magId integer
+AS
+SELECT Twr_TwrId, Twr_Kod, 
+ISNULL(Twr_IloscMin,0) AS Twr_IloscMin, 
+ISNULL(Twr_IloscMax,0) AS Twr_IloscMax, 
+ISNULL(Twr_IloscZam,0) AS Twr_IloscZam, 
+ISNULL(TwI_Ilosc,0) AS TwI_Ilosc,  
+ISNULL(Sum(TrE_WartoscNetto),0) AS Wartosc_Spr, 
+ISNULL(SUM(TrE_Ilosc),0) AS Ilosc_Spr 
+FROM
+CDN.TraElem
+JOIN CDN.TraNag ON TrE_TrNId = TrN_TrNID
+JOIN CDN.Towary ON TrE_TwrId = Twr_TwrId
+JOIN CDN.TwrAtrybuty ON TwA_TwrId = Twr_TwrId
+LEFT OUTER JOIN CDN.TwrIlosci Ilosci ON Ilosci.TwI_TwIId =(SELECT TOP 1 IL.TwI_TwIId From CDN.TwrIlosci IL Where IL.TwI_TwrId = Twr_TwrID And IL.TwI_MagId =  @magId And IL.TwI_Data <= Convert(DATETIME,GETDATE(),120) ORDER BY IL.TwI_Data DESC) 
+WHERE TrE_TypDokumentu IN (302,305)
+AND TrN_Anulowany = 0
+AND TrE_TwrTyp = 1
+AND TrE_TwrNazwa LIKE @productName +'%' 
+AND TwA_DeAId = @twrAtrId
+AND TwA_WartoscTxt =  @twrAtrTxt
+AND TrE_DataDok > DATEADD(DAY, -@daysBack, GETDATE())
+GROUP BY Twr_TwrId, Twr_Kod, Twr_IloscMin, Twr_IloscMax, Twr_IloscZam, TwI_Ilosc
+GO
+
+CREATE PROCEDURE [ELTES].[GetLastKntSupplierOptPlus] @twr_twrId integer
+AS  
+SELECT TOP 1 Knt_KntId, Knt_Kod, Knt_Nazwa1, TrN_NumerPelny, TrN_TS_Zal
+FROM CDN.Kontrahenci
+JOIN CDN.TraNag ON TrN_PodID = Knt_KntId
+JOIN CDN.TraElem ON TrE_TrNId = TrN_TrNID
+WHERE TrN_TypDokumentu = 301
+AND TrN_Anulowany = 0
+AND TrE_TwrId = @twr_twrId
+ORDER BY TrN_TS_Zal DESC
 GO

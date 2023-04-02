@@ -15,7 +15,11 @@ namespace OptimaBaseForm.Views
     {
         public event EventHandler ShowConnectionConfig;
         public event EventHandler ShowDataBaseConfig;
-        public event EventHandler ShowSetSaleFromFile;
+        public event EventHandler ShowSetSaleFromFile;        
+        public event EventHandler ShowIntegrationBaselinker;
+        public event EventHandler ShowIntegrationPrestaShop;
+        public event EventHandler ShowUpdateProducts;
+
         public MainView()
         {
             InitializeComponent();
@@ -38,7 +42,7 @@ namespace OptimaBaseForm.Views
                 ShowDataBaseConfig?.Invoke(this, EventArgs.Empty);
                 HideMainPanel();
             };
-            btnMainOrders.Click += delegate
+            btnPromoOptima.Click += delegate
             {
                 ShowSubMenu(panelSubmenu2);
                 ShowMainPanel();
@@ -48,6 +52,27 @@ namespace OptimaBaseForm.Views
                 ShowSetSaleFromFile?.Invoke(this, EventArgs.Empty);
                 HideMainPanel();
             };
+            btnMainIntegrations.Click += delegate
+            {               
+                ShowSubMenu(panelSubmenu3);
+                ShowMainPanel();
+            };
+            btnIntegrationBaselinker.Click += delegate
+            {
+                ShowIntegrationBaselinker?.Invoke(this, EventArgs.Empty);
+                HideMainPanel();
+            };
+            btnIntegrationPresta.Click += delegate
+            {
+                ShowIntegrationPrestaShop?.Invoke(this, EventArgs.Empty);
+                HideMainPanel();
+            };
+             btnUpdateProducts.Click += delegate
+            {
+                ShowUpdateProducts?.Invoke(this, EventArgs.Empty);
+                HideMainPanel();
+            };
+
         }
 
         public void CustomizeDesign()

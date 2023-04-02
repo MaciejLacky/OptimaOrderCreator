@@ -19,7 +19,23 @@ namespace OptimaBaseForm.Presenters
             this.mainView.ShowConnectionConfig += ShowConnectionConfig;
             this.mainView.ShowDataBaseConfig += ShowDataBaseConfig;
             this.mainView.ShowSetSaleFromFile += ShowSetSaleFromFile;
+            this.mainView.ShowIntegrationBaselinker += ShowIntegrationBaselinker;
+            this.mainView.ShowUpdateProducts += ShowUpdateProducts;
     }
+
+        private void ShowUpdateProducts(object? sender, EventArgs e)
+        {
+            var view = UpdateProductsView.GetInstance((MainView)mainView);
+
+            new UpdateProductsPresenter(view, mainView);
+        }
+
+        private void ShowIntegrationBaselinker(object? sender, EventArgs e)
+        {
+            var view = IntegrationBaselinkerView.GetInstance((MainView)mainView);
+
+            new IntegrationBaselinkerPresenter(view, mainView);
+        }
 
         private void ShowSetSaleFromFile(object? sender, EventArgs e)
         {
