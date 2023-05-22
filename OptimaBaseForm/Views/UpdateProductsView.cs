@@ -50,6 +50,7 @@ namespace OptimaBaseForm.Views
         public string OrderRotationKnt { get => ((KeyValuePair<int, string>)cbOrderRotationKnt.SelectedItem).Value;}
         public int OrderRotationKntId { get => ((KeyValuePair<int, string>)cbOrderRotationKnt.SelectedItem).Key; set => cbOrderRotationKnt.SelectedValue = value; }
         public bool LastKntByOrder { get => cbLastKntByOrder.Checked; set => cbLastKntByOrder.Checked = value; }
+        public ProgressBar ProgressBarCreateOrder { get => prBarCreateOrder; set=> prBarCreateOrder = value; }
 
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;

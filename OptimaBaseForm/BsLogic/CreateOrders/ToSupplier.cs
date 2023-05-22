@@ -16,12 +16,16 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
 {
     public static class ToSupplier
     {
-        public static string Create(List<DtoOrderToSupplier> dto, int addIfZero, int defaultMin, int defaultMax, string kntCode, int idMag)
+        public static string Create(List<DtoOrderToSupplier> dto, int addIfZero, int defaultMin, int defaultMax, string kntCode, int idMag, ProgressBar prBar)
         {
             if (!Opt.LogIn()) return "błąd logowania Optima";
             int quantityToOrder;
             bool createDoc = false;
             string docNumbers = "";
+            int counter = 0;
+            prBar.Maximum= dto.Count();
+            prBar.Step= 1;
+            //prBar.Refresh();
             List<string> kntCodeList = new List<string>();
             if (Settings.Default.LastKntByOrder)
                 foreach (var item in dto.DistinctBy(x => x.Knt_Kod))
@@ -30,7 +34,7 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
             {
                 foreach (var item in kntCodeList)
                 {
-                    createDoc = false;
+                    createDoc = false;                   
                     AdoSession session = Opt.Login.CreateSession();
                     //var zamDocs = (DokumentyHaMag)session.CreateObject("CDN.DokumentyHaMag", null);
                     DokumentyHaMag optDocuments = (DokumentyHaMag)session.CreateObject("CDN.DokumentyHaMag", null);
@@ -57,6 +61,7 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                         ICollection positions = optDocument.Elementy;
                         foreach (var row in dto.Where(x=>x.Knt_Kod == item))
                         {
+                            
                             quantityToOrder = 0;
                             // quantityToOrder = Convert.ToInt32(row["Ilosc_Spr"].ToString());                   
                             var Ilosc_Sp = Convert.ToInt32(row.Ilosc_Spr);
@@ -72,7 +77,9 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                             if (defaultMax > 0 && row.TwI_Ilosc <= defaultMin)
                                 quantityToOrder = defaultMax - row.TwI_Ilosc;
 
-
+                            counter++;
+                            prBar.Value = counter;
+                            prBar.Refresh();
 
                             if (quantityToOrder == 0) continue;
                             createDoc = true;
@@ -80,12 +87,13 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                             IElementHaMag position = (IElementHaMag)positions.AddNew(null);
                             position.Towar = optimaTowar;
                             position.Ilosc = quantityToOrder;
+                       
 
                         }
                         if (createDoc)
                         {
                             session.Save();
-                            Log.Info($"Dodano zamówienie nr {optDocument.NumerPelny} dla kontrahenta {kntCode}");
+                            Log.Info($"Dodano zamówienie nr {optDocument.NumerPelny} dla kontrahenta {item} ");
                             docNumbers += optDocument.NumerPelny + " ";
                         }
 
@@ -125,6 +133,7 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                     ICollection positions = optDocument.Elementy;
                     foreach (var row in dto)
                     {
+                       
                         quantityToOrder = 0;
                         // quantityToOrder = Convert.ToInt32(row["Ilosc_Spr"].ToString());                   
                         var Ilosc_Sp = Convert.ToInt32(row.Ilosc_Spr);
@@ -140,7 +149,9 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                         if (defaultMax > 0 && row.TwI_Ilosc <= defaultMin)
                             quantityToOrder = defaultMax - row.TwI_Ilosc;
 
-
+                        counter++;
+                        prBar.Value = counter;
+                        prBar.Refresh();
 
                         if (quantityToOrder == 0) continue;
                         createDoc = true;
@@ -148,7 +159,8 @@ namespace OptimaBaseForm.BsLogic.CreateOrders
                         IElementHaMag position = (IElementHaMag)positions.AddNew(null);
                         position.Towar = optimaTowar;
                         position.Ilosc = quantityToOrder;
-
+                       
+                        
                     }
                     if (createDoc)
                     {

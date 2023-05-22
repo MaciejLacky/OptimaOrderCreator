@@ -53,7 +53,7 @@ namespace OptimaBaseForm.Presenters
                 ToSupplier.GetLastKntOnProducts(dataDto);
             if (dataDto.Count == 0) return;
             this.view.LogInfo($"Tworze zamówienia na {data.Rows.Count} produktów...", 2);
-            var docNumbers = ToSupplier.Create(dataDto,addIfZero,defaultMin,defaultMax,codeKnt, idMag);
+            var docNumbers = ToSupplier.Create(dataDto,addIfZero,defaultMin,defaultMax,codeKnt, idMag, this.view.ProgressBarCreateOrder);
             this.view.LogInfo($" {docNumbers}... zakończono ", 2);
         }
 

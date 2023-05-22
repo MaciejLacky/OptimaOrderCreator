@@ -30,6 +30,7 @@ namespace OptimaBaseForm.Views.Interfaces
         public string OrderRotationKnt { get; }
         public int OrderRotationKntId { get; set; }
         event EventHandler CreateOrderEvent;
+        public ProgressBar ProgressBarCreateOrder { get; set; }
         
     }
 }

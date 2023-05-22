@@ -35,6 +35,7 @@
             this.btnSaveView = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.prBarCreateOrder = new System.Windows.Forms.ProgressBar();
             this.tbLogOrder = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbLastKntByOrder = new System.Windows.Forms.CheckBox();
@@ -181,6 +182,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.prBarCreateOrder);
             this.groupBox2.Controls.Add(this.tbLogOrder);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.cbCreateOrderRotation);
@@ -190,6 +192,13 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Zamówienia";
+            // 
+            // prBarCreateOrder
+            // 
+            this.prBarCreateOrder.Location = new System.Drawing.Point(20, 54);
+            this.prBarCreateOrder.Name = "prBarCreateOrder";
+            this.prBarCreateOrder.Size = new System.Drawing.Size(925, 14);
+            this.prBarCreateOrder.TabIndex = 3;
             // 
             // tbLogOrder
             // 
@@ -221,7 +230,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.nudOrderRotationDaysBack);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(20, 74);
+            this.panel3.Location = new System.Drawing.Point(20, 101);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(936, 105);
             this.panel3.TabIndex = 1;
@@ -407,7 +416,7 @@
             // cbCreateOrderRotation
             // 
             this.cbCreateOrderRotation.AutoSize = true;
-            this.cbCreateOrderRotation.Location = new System.Drawing.Point(20, 57);
+            this.cbCreateOrderRotation.Location = new System.Drawing.Point(20, 84);
             this.cbCreateOrderRotation.Name = "cbCreateOrderRotation";
             this.cbCreateOrderRotation.Size = new System.Drawing.Size(200, 19);
             this.cbCreateOrderRotation.TabIndex = 0;
@@ -734,5 +743,6 @@
         private TextBox tbOrderRotationAtrProductValue;
         private TextBox tbLogOrder;
         private CheckBox cbLastKntByOrder;
+        private ProgressBar prBarCreateOrder;
     }
 }
